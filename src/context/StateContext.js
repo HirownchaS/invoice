@@ -81,21 +81,21 @@ export default function StateContext({ children }) {
   But it has a bug where if you delete an item from the table, it still keeps the previous total amount.
   The function after this comment uses `collect.js` which is a much better solution.  
   */
-  function CalcSum() {
-    let rows = document.querySelectorAll(".amount");
-    let sum = 0;
+  // function CalcSum() {
+  //   let rows = document.querySelectorAll(".amount");
+  //   let sum = 0;
 
-    for (let i = 0; i < rows.length; i++) {
-      if (rows[i].className === "amount") {
-        sum += isNaN(rows[i].innerHTML) ? 0 : parseInt(rows[i].innerHTML);
-        setTotal(sum);
-      }
-    }
-  }
+  //   for (let i = 0; i < rows.length; i++) {
+  //     if (rows[i].className === "amount") {
+  //       sum += isNaN(rows[i].innerHTML) ? 0 : parseInt(rows[i].innerHTML);
+  //       setTotal(sum);
+  //     }
+  //   }
+  // }
 
-  useEffect(() => {
-    CalcSum();
-  }, [price, quantity]);
+  // useEffect(() => {
+  //   CalcSum();
+  // }, [price, quantity]);
 
   // Use collect.js to calculate the total amount of items in the table. This is a much better function than the commented one above.
   const calculateTotal = () => {
