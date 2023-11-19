@@ -1,6 +1,6 @@
 import { createContext, useEffect, useRef, useState } from "react";
 import { toast } from "react-toastify";
-// import { v4 as uuidv4 } from "uuid";
+import { v4 as uuidv4 } from "uuid";
 import collect from "collect.js";
 
 export const State = createContext();
@@ -51,7 +51,7 @@ export default function StateContext({ children }) {
       toast.error("Please fill in all inputs");
     } else {
       const newItems = {
-        // id: uuidv4(),
+        id: uuidv4(),
         description,
         quantity,
         price,
@@ -121,7 +121,7 @@ export default function StateContext({ children }) {
   // Delete function
   const deleteRow = (id) => {
     setList(list.filter((row) => row.id !== id));
-    CalcSum();
+    // CalcSum();
     setShowModal(false);
   };
 
